@@ -5,7 +5,7 @@
   <head>
   {%- if page.redirect -%}
   {%- if page.redirect contains '://' -%}
-    <meta http-equiv="refresh" content="1; url={{ page.redirect }}/" />
+    <meta http-equiv="refresh" content="3; url={{ page.redirect }}/" />
   {%- else -%}
     <meta http-equiv="refresh" content="3; url={{ site.baseurl }}/" />
   {%- endif -%}
