@@ -6,6 +6,6 @@ cd $SCRIPTPATH
 
 cd ..
 rm -r gh-pages/docs/
-cp -r ai-folio/_site/ gh-pages/docs
+cp -r mgr-cse/_site/ gh-pages/docs
 
 echo "updated gh-pages!"

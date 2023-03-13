@@ -42,6 +42,12 @@
 
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/dark_mode.js"></script>
+    <!-- set dark mode as default-->
+    <script type="text/javascript">
+        if (localStorage.getItem("theme") == null || localStorage.getItem("theme") == 'null') {
+            setTheme('dark');
+        }
+    </script>
     
 
   </head>
@@ -116,6 +122,13 @@
     <div class="table-responsive">
       <table class="table table-sm table-borderless">
         
+        <tr>
+          <th scope="row">Mar 12, 2023</th>
+          <td>
+              <a class="post-link" href="/blog/2023/seo/">My SEO Data</a>
+          </td>
+        </tr>
+      
         <tr>
           <th scope="row">Mar 11, 2023</th>
           <td>

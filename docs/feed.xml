@@ -1,5 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-03-12T19:55:07+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">mgr-cse</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">Hello, World!</title><link href="http://localhost:4000/blog/2023/giscus-comments/" rel="alternate" type="text/html" title="Hello, World!" /><published>2023-03-11T21:29:00+05:30</published><updated>2023-03-11T21:29:00+05:30</updated><id>http://localhost:4000/blog/2023/giscus-comments</id><content type="html" xml:base="http://localhost:4000/blog/2023/giscus-comments/"><![CDATA[<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-03-13T23:30:31+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">mgr-cse</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">My SEO Data</title><link href="http://localhost:4000/blog/2023/seo/" rel="alternate" type="text/html" title="My SEO Data" /><published>2023-03-12T18:14:00+05:30</published><updated>2023-03-12T18:14:00+05:30</updated><id>http://localhost:4000/blog/2023/seo</id><content type="html" xml:base="http://localhost:4000/blog/2023/seo/"><![CDATA[<!-- style for graphs -->
+<script type="text/javascript">
+    function toggle_graphs(theme_name) {
+        const para = document.getElementsByClassName('stat_graph');
+        console.log(para)
+        for (let i = 0; i<para.length; i++) {
+            let frame = para[i].getElementsByTagName('iframe')[0];
+            if (theme_name == "dark") {
+                frame.style.filter = "invert(80%)";
+            } else {
+                frame.style.filter = "invert(0%)";
+            }
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        toggle_graphs(localStorage.getItem("theme"))
+        const mode_toggle = document.getElementById("light-toggle");
+        mode_toggle.addEventListener("click", function() {
+            // add logic for inversion
+            toggle_graphs(localStorage.getItem("theme"));
+        });
+    });
+</script>
+
+<!--script for google trends for 5 yr -->
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3261_RC06/embed_loader.js"></script>
+
+<script type="text/javascript">
+    function getTrends5yrIntl(keywords) {
+        let dur = "today 5-y";
+        let geo = "";
+        let expQueryStr = keywords.join(",");
+        expQueryStr = 
+        expQueryStr = `date=today%205-y&q=${expQueryStr}&hl=en`;
+        let compItem = {
+            "comparisonItem": [],
+            "category": 0,
+            "property": ""
+        };
+        for (k in keywords)
+            compItem["comparisonItem"].push(
+                {
+                    "keyword": keywords[k],
+                    "geo": geo,
+                    "time": dur
+                }
+            );
+        let expQuery = {
+            "exploreQuery": expQueryStr,
+            "guestPath":"https://trends.google.com:443/trends/embed/"
+        };
+        trends.embed.renderExploreWidget("TIMESERIES", compItem, expQuery);
+    }
+</script>
+
+<p class="stat_graph">
+<script type="text/javascript"> 
+    getTrends5yrIntl(['C', 'Java', 'Python'])
+</script>
+<em>Programming languages </em>
+</p>
+
+<p class="stat_graph">
+<script type="text/javascript"> 
+    getTrends5yrIntl(['computer', 'algorithm', 'coding'])
+</script>
+<em>Computer compared to CS related keywords. </em>
+</p>]]></content><author><name></name></author><category term="analysis" /><category term="trends" /><category term="trends" /><summary type="html"><![CDATA[The seo data for my personal analysis]]></summary></entry><entry><title type="html">Hello, World!</title><link href="http://localhost:4000/blog/2023/giscus-comments/" rel="alternate" type="text/html" title="Hello, World!" /><published>2023-03-11T21:29:00+05:30</published><updated>2023-03-11T21:29:00+05:30</updated><id>http://localhost:4000/blog/2023/giscus-comments</id><content type="html" xml:base="http://localhost:4000/blog/2023/giscus-comments/"><![CDATA[<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>

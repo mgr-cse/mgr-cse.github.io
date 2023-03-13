@@ -41,6 +41,12 @@
 
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/dark_mode.js"></script>
+    <!-- set dark mode as default-->
+    <script type="text/javascript">
+        if (localStorage.getItem("theme") == null || localStorage.getItem("theme") == 'null') {
+            setTheme('dark');
+        }
+    </script>
     
 
   </head>

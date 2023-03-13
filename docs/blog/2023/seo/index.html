@@ -10,10 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>code | mgr-cse</title>
+    <title>My SEO Data | mgr-cse</title>
     <meta name="author" content="Maitrey  Ranade">
-    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-">
+    <meta name="description" content="The seo data for my personal analysis">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -34,7 +33,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/blog/tag/code/">
+    <link rel="canonical" href="http://localhost:4000/blog/2023/seo/">
     
     <!-- Dark Mode -->
     
@@ -111,28 +110,128 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <div class="post">
+      <!-- _layouts/post.html -->
+
+<div class="post">
 
   <header class="post-header">
-    <h1 class="post-title"> <i class="fas fa-hashtag fa-sm"></i> code </h1>
-    <p class="post-description"> an archive of posts with this tag </p>
+    <h1 class="post-title">My SEO Data</h1>
+    <p class="post-meta">March 12, 2023</p>
+    <p class="post-tags">
+      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+        ·  
+        <a href="/blog/tag/trends">
+          <i class="fas fa-hashtag fa-sm"></i> trends</a>  
+          
+        ·  
+        <a href="/blog/category/analysis">
+          <i class="fas fa-tag fa-sm"></i> analysis</a>  
+          <a href="/blog/category/trends">
+          <i class="fas fa-tag fa-sm"></i> trends</a>  
+          
+
+    </p>
   </header>
 
-  <article>
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        
-        <tr>
-          <th scope="row">Mar 11, 2023</th>
-          <td>
-              <a class="post-link" href="/blog/2023/giscus-comments/">Hello, World!</a>
-          </td>
-        </tr>
-      
-      </table>
-    </div>
-  </article>
+  <article class="post-content">
+    <!-- style for graphs -->
+<script type="text/javascript">
+    function toggle_graphs(theme_name) {
+        const para = document.getElementsByClassName('stat_graph');
+        console.log(para)
+        for (let i = 0; i<para.length; i++) {
+            let frame = para[i].getElementsByTagName('iframe')[0];
+            if (theme_name == "dark") {
+                frame.style.filter = "invert(80%)";
+            } else {
+                frame.style.filter = "invert(0%)";
+            }
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        toggle_graphs(localStorage.getItem("theme"))
+        const mode_toggle = document.getElementById("light-toggle");
+        mode_toggle.addEventListener("click", function() {
+            // add logic for inversion
+            toggle_graphs(localStorage.getItem("theme"));
+        });
+    });
+</script>
 
+<!--script for google trends for 5 yr -->
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3261_RC06/embed_loader.js"></script>
+
+<script type="text/javascript">
+    function getTrends5yrIntl(keywords) {
+        let dur = "today 5-y";
+        let geo = "";
+        let expQueryStr = keywords.join(",");
+        expQueryStr = 
+        expQueryStr = `date=today%205-y&q=${expQueryStr}&hl=en`;
+        let compItem = {
+            "comparisonItem": [],
+            "category": 0,
+            "property": ""
+        };
+        for (k in keywords)
+            compItem["comparisonItem"].push(
+                {
+                    "keyword": keywords[k],
+                    "geo": geo,
+                    "time": dur
+                }
+            );
+        let expQuery = {
+            "exploreQuery": expQueryStr,
+            "guestPath":"https://trends.google.com:443/trends/embed/"
+        };
+        trends.embed.renderExploreWidget("TIMESERIES", compItem, expQuery);
+    }
+</script>
+
+<p class="stat_graph">
+<script type="text/javascript"> 
+    getTrends5yrIntl(['C', 'Java', 'Python'])
+</script>
+<em>Programming languages </em>
+</p>
+
+<p class="stat_graph">
+<script type="text/javascript"> 
+    getTrends5yrIntl(['computer', 'algorithm', 'coding'])
+</script>
+<em>Computer compared to CS related keywords. </em>
+</p>
+
+  </article><div id="giscus_thread" style="max-width: 800px; margin: 0 auto;">
+  <script>
+    let giscusTheme = localStorage.getItem("theme");
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "mgr-cse/mgr-cse.github.io",
+        "data-repo-id": "R_kgDOJIfHSQ",
+        "data-category": "General",
+        "data-category-id": "DIC_kwDOJIfHSc4CU0bZ",
+        "data-mapping": "title",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "en",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
+
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a>
+</noscript>
+</div>
 </div>
 
     </div>

@@ -4,7 +4,7 @@
   <!-- Head -->
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="1; url=https://mgr-cse.github.io/my-mahal/">    <!-- Metadata, OpenGraph and Schema.org -->
+<meta http-equiv="refresh" content="3; url=https://mgr-cse.github.io/my-mahal/">    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
@@ -43,6 +43,12 @@
 
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/dark_mode.js"></script>
+    <!-- set dark mode as default-->
+    <script type="text/javascript">
+        if (localStorage.getItem("theme") == null || localStorage.getItem("theme") == 'null') {
+            setTheme('dark');
+        }
+    </script>
     
 
   </head>
@@ -115,7 +121,19 @@
           </header>
 
           <article>
-            <p>You are being re-directed to <a href="https://mgr-cse.github.io/my-mahal" rel="external nofollow noopener" target="_blank">https://mgr-cse.github.io/my-mahal</a> within 1 seconds.</p>
+            <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const count_elem = document.querySelector('.redirect_timeout');
+        let count = count_elem.innerHTML
+        setInterval(() => {
+            count--;
+            count_elem.innerHTML = count
+        }, 1000)
+})
+</script>
+
+<p>You will be automatically re-directed to <a href="https://mgr-cse.github.io/my-mahal" rel="external nofollow noopener" target="_blank">https://mgr-cse.github.io/my-mahal</a> in <span class="redirect_timeout">3</span> seconds.<br> 
+If not, <a href="https://mgr-cse.github.io/my-mahal" rel="external nofollow noopener" target="_blank">click here</a></p>
 
           </article>
 
