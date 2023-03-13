@@ -28,4 +28,10 @@
 
     <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/dark_mode.js' | relative_url }}"></script>
+    <!-- set dark mode as default-->
+    <script type="text/javascript">
+        if (localStorage.getItem("theme") == null || localStorage.getItem("theme") == 'null') {
+            setTheme('dark');
+        }
+    </script>
     {% endif %}
